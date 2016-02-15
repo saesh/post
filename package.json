@@ -25,7 +25,7 @@
     "classnames": "^2.2.3",
     "csjs": "^1.0.0-beta.0",
     "csjs-injectify": "git+https://github.com/rtsao/csjs-injectify.git",
-    "git-credential-env": "^0.4.0",
+    "git-credential-env": "^1.0.0",
     "gulp": "^3.9.0",
     "gulp-plumber": "^1.0.1",
     "gulp-sourcemaps": "^1.6.0",
