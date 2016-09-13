@@ -31,7 +31,7 @@ const styles = csjs`
   .title {
     margin: 10px 0;
     font-size: 22px;
-    font-weight: 200;
+    font-weight: 300;
   }
 
 `;
