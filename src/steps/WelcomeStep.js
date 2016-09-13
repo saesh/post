@@ -14,7 +14,7 @@ export default class WelcomeStep extends React.Component {
       r(Spacer, { height: '10px' }),
       r('p', null,
         'requires a ',
-        r('a', { href: 'https://dashboard.lob.com/#/register', target: '_blank' }, 'lob account')
+        r('a', { href: 'https://dashboard.lob.com/#/register', target: '_blank', rel: 'nofollow' }, 'lob account')
       ),
 
       r(Spacer),
