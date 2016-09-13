@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var plumber = require('gulp-plumber');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
+var { rm } = require('shelljs');
 var uglifyify = require('uglifyify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
@@ -14,9 +15,10 @@ var http = require('http');
 var nodeStatic = require('node-static');
 
 
-gulp.task('start-dev', ['_watch-dev'], startServer);
-gulp.task('build-dev', ['_build-js-dev', '_build-static']);
-gulp.task('build-prod', ['_build-js-prod', '_build-static']);
+gulp.task('clean', [], clean);
+gulp.task('start-dev', ['clean', '_watch-dev'], startServer);
+gulp.task('build-dev', ['clean', '_build-js-dev', '_build-static']);
+gulp.task('build-prod', ['clean', '_build-js-prod', '_build-static']);
 
 gulp.task('_build-js-dev', buildJsDev);
 gulp.task('_build-js-prod', buildJsProd);
@@ -75,13 +77,13 @@ function buildJsProd(done) {
 
 function buildStatic() {
   gulp.src([
-    './CNAME',
-    './src/index.html'
-  ]).pipe(gulp.dest('./build'));
-
-  gulp.src([
     './src/static/**/*'
-  ]).pipe(gulp.dest('./build/static'));
+  ]).pipe(gulp.dest('./build'));
+}
+
+
+function clean() {
+  rm('-rf', './build');
 }
 
 
