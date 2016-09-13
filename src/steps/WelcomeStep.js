@@ -27,10 +27,3 @@ export default class WelcomeStep extends React.Component {
   }
 
 }
-
-
-const styles = csjs`
-
-
-
-`;
